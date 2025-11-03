@@ -1,4 +1,4 @@
-import { modal } from './components/modal.js';
+import { footer } from './components/footer.js';
 import './style.css';
 
-document.querySelector('#app').append(modal());
+document.querySelector('#app').append(footer());
