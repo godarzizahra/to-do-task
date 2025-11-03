@@ -1,5 +1,4 @@
 import { El } from '../Utils/El.js';
-import '../assets/square-plus.svg';
 export function header() {
   return El({
     element: 'div',
@@ -7,12 +6,13 @@ export function header() {
     children: [
       El({
         element: 'div',
-        className: 'flex gap-5 ml-2',
+        className: 'flex gap-3 ml-2',
         children: [
           El({
             element: 'img',
-            src: '../assets/list.svg',
+            src: '../../public/list-ul-svgrepo-com.svg',
             alt: 'list-svg',
+            className: 'w-8 ',
           }),
           El({
             element: 'div',
@@ -43,11 +43,17 @@ export function header() {
               }),
             ],
           }),
-          El({ element: 'img', src: '/assets/filter.svg', alt: 'filter-svg' }),
           El({
             element: 'img',
-            src: '/assets/square-plus.svg',
+            src: '../../public/filter-svgrepo-com.svg',
+            alt: 'filter-svg',
+            className: 'w-5',
+          }),
+          El({
+            element: 'img',
+            src: '../../public/square-plus-svgrepo-com.svg',
             alt: 'square-plus-svg',
+            className: 'w-5',
           }),
         ],
       }),
