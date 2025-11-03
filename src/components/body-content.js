@@ -9,7 +9,7 @@ export function body() {
       El({
         element: 'div',
         innerText: 'Task Name',
-        className: 'border-2 p-2 border-gray-300',
+        className: 'border-2 p-2 border-gray-300 text-left',
       }),
       El({
         element: 'div',
@@ -35,7 +35,7 @@ export function body() {
       El({
         element: 'span',
         innerText: 'Walk the dog',
-        className: 'border-2 p-2 border-gray-300',
+        className: 'border-2 p-2 border-gray-300 text-left',
       }),
       El({
         element: 'div',
@@ -77,18 +77,18 @@ export function body() {
         children: [
           El({
             element: 'img',
-            src: '../../public/trash.svg',
-            className: 'w-5',
+            src: '../../public/trash-blank-alt-svgrepo-com.svg',
+            className: 'w-6 bg-red-500  rounded-xs',
           }),
           El({
             element: 'img',
-            src: '../../public/pencil.svg',
-            className: 'w-5',
+            src: '../../public/pencil-svgrepo-com.svg',
+            className: 'w-6 bg-blue-500  rounded-xs ',
           }),
           El({
             element: 'img',
-            src: '../../public/eye.svg',
-            className: 'w-5',
+            src: '../../public/eye-svgrepo-com.svg',
+            className: 'w-6 bg-gray-400  rounded-xs',
           }),
         ],
       }),
