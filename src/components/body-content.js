@@ -31,7 +31,7 @@ export function body() {
     }),
   ];
 
-  // برای هر تسک، یه ردیف جدید بساز
+  //
   const taskRows = tasks.flatMap((task) => [
     El({
       element: 'span',
@@ -94,7 +94,7 @@ export function body() {
             {
               event: 'click',
               callback: () => {
-                // حذف تسک از لوکال استورج
+                //
                 const updatedTasks = tasks.filter((t) => t.name !== task.name);
                 localStorage.setItem('tasks', JSON.stringify(updatedTasks));
                 location.reload();
@@ -102,10 +102,19 @@ export function body() {
             },
           ],
         }),
+        //
         El({
           element: 'img',
           src: '../../public/pencil-svgrepo-com.svg',
           className: 'w-6 bg-blue-500 rounded-xs cursor-pointer',
+          eventListener: [
+            {
+              event: 'click',
+              callback: () => {
+                document.body.append(Modal(tasks));
+              },
+            },
+          ],
         }),
         El({
           element: 'img',
