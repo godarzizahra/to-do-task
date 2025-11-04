@@ -1,4 +1,3 @@
-// modal.js
 import { El } from '../Utils/El.js';
 
 export function Modal() {
@@ -27,34 +26,95 @@ export function Modal() {
             element: 'input',
             type: 'text',
             className: 'w-full border p-1 rounded-sm',
+            id: 'task-name',
           }),
           El({ element: 'label', innerText: 'task priority' }),
           El({
             element: 'select',
             className: 'w-full border p-1 rounded-sm',
+            id: 'task-priority',
+            children: [
+              El({
+                element: 'option',
+                innerText: 'Low',
+                className: 'bg-[#6200ea]',
+              }),
+              El({
+                element: 'option',
+                innerText: 'Medium',
+                className: 'bg-[#6200ea]',
+              }),
+              El({
+                element: 'option',
+                innerText: 'High',
+                className: 'bg-[#6200ea]',
+              }),
+            ],
           }),
           El({ element: 'label', innerText: 'task status' }),
           El({
             element: 'select',
             className: 'w-full border p-1 rounded-sm',
+            id: 'task-status',
+            children: [
+              El({
+                element: 'option',
+                innerText: 'Todo',
+                className: 'bg-[#6200ea]',
+              }),
+              El({
+                element: 'option',
+                innerText: 'Doing',
+                className: 'bg-[#6200ea]',
+              }),
+              El({
+                element: 'option',
+                innerText: 'Done',
+                className: 'bg-[#6200ea]',
+              }),
+            ],
           }),
           El({ element: 'label', innerText: 'task deadline' }),
           El({
             element: 'input',
             type: 'date',
             className: 'w-full border p-1 rounded-sm',
+            id: 'task-deadline',
           }),
           El({ element: 'label', innerText: 'task details' }),
           El({
             element: 'input',
-            className: 'w-full border p-1 rounded-sm',
+            className: 'w-full h-20 border p-1 rounded-sm',
+            id: 'task-details',
           }),
           El({
             element: 'button',
             innerText: 'Save',
             className:
               'w-full col-span-full border p-1 rounded-sm bg-white text-[#6200ea] font-semibold',
+            eventListener: [
+              {
+                event: 'click',
+                callback: () => {
+                  const taskData = {
+                    name: document.getElementById('task-name').value,
+                    priority: document.getElementById('task-priority').value,
+                    status: document.getElementById('task-status').value,
+                    deadline: document.getElementById('task-deadline').value,
+                    details: document.getElementById('task-details').value,
+                  };
+                  const existing =
+                    JSON.parse(localStorage.getItem('tasks')) || [];
+                  existing.push(taskData);
+                  localStorage.setItem('tasks', JSON.stringify(existing));
+
+                  alert('tasks saved successfully!');
+                  overlay.remove();
+                },
+              },
+            ],
           }),
+
           El({
             element: 'button',
             innerText: 'Close',
