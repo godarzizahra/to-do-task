@@ -1,4 +1,5 @@
 import { El } from '../Utils/El.js';
+import { Modal } from './modal.js';
 export function header() {
   return El({
     element: 'div',
@@ -54,6 +55,14 @@ export function header() {
             src: '../../public/square-plus-svgrepo-com.svg',
             alt: 'square-plus-svg',
             className: 'w-5',
+            eventListener: [
+              {
+                event: 'click',
+                callback: () => {
+                  document.body.append(Modal());
+                },
+              },
+            ],
           }),
         ],
       }),
