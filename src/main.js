@@ -1,6 +1,6 @@
-import { footer } from './components/footer.js';
-import { body } from './components/body-content.js';
-import { header } from './components/header.js';
-import './style.css';
+import { body } from "./components/body-content.js";
+import { header } from "./components/header.js";
 
-document.querySelector('#app').append(header(), body(), footer());
+import "./style.css";
+
+document.querySelector("#app").append(header(), body());
