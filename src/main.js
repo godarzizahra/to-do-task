@@ -1,11 +1,6 @@
-import './style.css';
-import javascriptLogo from './javascript.svg';
-import viteLogo from '/vite.svg';
-import { setupCounter } from './counter.js';
+import { body } from "./components/body-content.js";
+import { header } from "./components/header.js";
 
-document.querySelector('#app').innerHTML = `
-  
-  </div>
-`;
+import "./style.css";
 
-setupCounter(document.querySelector('#counter'));
+document.querySelector("#app").append(header(), body());
